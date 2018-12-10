@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %} home.html {% endblock %}
+
+{% load staticfiles %}
+
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="content_home">
+
+    <div id="homeimg">
+        <a href="/"><img src="{% static 'img/162_ggori_.jpg' %}" style="height:256px;"/></a>
+        <h4 style="margin: 0;">김영진의 12월 일정 다이어리 입니다.</h4>
+    </div>
+
+    <hr style="margin: 5px 0;">
+
+    <h2>어플리케이션 선택</h2>
+
+    <table id="applist">
+        <tr>
+        <td><b><i><a href="{% url 'bookmark:index' %}">사이트</a></i><b></td>
+        <td>김영진이 주로 이용하는 사이트</td>
+        <td id="Edit"><i><a href="#">Add</a></i></td>
+        <td id="Edit"><i><a href="#">Change</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="{% url 'blog:index' %}">일정</a></i><b></td>
+        <td>김영진의 12월 일정을 담은 스케쥴 다이어리</td>
+        <td id="Edit"><i><a href="#">Add</a></i></td>
+        <td id="Edit"><i><a href="#">Change</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="#">사진</a></i><b></td>
+        <td>다이어리와 함께 담을 예쁜 사진들</td>
+        <td id="Edit"><i><a href="#">Add</a></i></td>
+        <td id="Edit"><i><a href="#">Change</a></i></td>
+        </tr>
+    </table>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; kimyoungjin`s Diary 2018
+</div>
+{% endblock footer %}

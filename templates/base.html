@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}Django Web Programming{% endblock %}</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+
+</head>
+
+<body>
+
+<div id="header">
+    <h2 class="maintitle">12월 일정 다이어리.</h2>
+    <h4 class="welcome">Welcome, <a href="#">kimyoungjin</a> /
+                <a href="#">Change Password</a> /
+                <a href="#">Logout</a>
+    </h4>
+</div>
+
+<div id="menu">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'bookmark:index' %}">사이트</a></li>
+    <li><a href="{% url 'blog:index' %}">일정</a></li>
+    <li><a href="#">사진</a></li>
+
+    <li><a href="#">Add&bigtriangledown;</a>
+        <ul>
+            <li><a href="#">site</a></li>
+            <li><a href="#">schedule</a></li>
+	    <li><a href="#">photo</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Change&bigtriangledown;</a>
+        <ul>
+            <li><a href="#">site</a></li>
+            <li><a href="#">schedule</a></li>
+	    <li><a href="#">photo</a></li>
+        </ul>
+    </li>
+
+    <li><a href="{% url 'blog:post_archive' %}">올린 일자</a></li>
+    <li><a href="{% url 'blog:search' %}">찾기</a></li>
+    <li><a href="{% url 'admin:index' %}">관리자</a></li>
+</div>
+
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>
